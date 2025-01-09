@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="outer-container">
+    <div class="title">
+        <h1>Welcome to my homepage</h1>
+    </div>
+    <div class="container">
+        <div class="form-section">
+            <h2>Personal Info</h2>
+            <form id="feedbackform">
+                <div class="main_input_box">
+                    <div class="form-group">
+                        <div class="columns">
+                            <div class="column">
+                                <label for="FirstName">Name<span class="mandatory"> *</span></label>
+                                <input type="text" id="Fname" class="alphabet-only" placeholder="Enter your first name" required>
+
+                                <label for="initial">Middle initial</label>
+                                <input type="text" id="initial" class="alphabet-only" placeholder="Enter your middle initial" required>
+
+                                <label for="LastName">Last Name<span class="mandatory"> *</span></label>
+                                <input type="text" id="Lname" class="alphabet-only" placeholder="Enter your last name" required>
+
+                                <label for="country">I am from<span class="mandatory"> *</span></label>
+                                <select id="Cdropdown" class="select-dropdown" name="CountryDropdown">
+                                    <option value="" disabled selected>Select your country of origin</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Columbia">Columbia</option>
+                                    <option value="Singapore">Singapore</option>
+                                </select>
+                            </div>
+                            <div class="column">
+                                <label for="matriculation">Matriculation<span class="mandatory"> *</span></label>
+                                <input type="number" id="matriculation" placeholder="Enter your matriculation number">
+                        
+                                <label for="semester">Semester<span class="mandatory"> *</span></label>
+                                <input type="number" id="semester" placeholder="Enter your current semester">
+
+                                <label for="program">Program<span class="mandatory"> *</span></label>
+                                <select id="Pdropdown" class="select-dropdown" name="ProgramDropdown">
+                                    <option value="" disabled selected>Select your current program</option>
+                                    <option value="M.Sc. Big Data and AI">M.Sc. Big Data and AI</option>
+                                    <option value="M.Sc. Cyber Security">M.Sc. Cyber Security</option>
+                                    <option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
+                                    <option value="M.Sc. Robotics">M.Sc. Robotics</option>
+                                    <option value="M.Sc. Industry 4.0">M.Sc. Industry 4.0</option>
+                                    <option value="M.Sc. Arts and Film making">M.Sc. Arts and Film making</option>
+                                </select>
+
+                                <label for="startdate">Started in<span class="mandatory"> *</span></label>
+                                <input type="date" id="StartDate" placeholder="Select your program start date" onclick="restrictDate()">
+                            </div>
+                        </div> 
+                    </div>  
+                </div>
+            </form>
+
+        <div class="fancy-line-seperator"></div>
+
+        <div class="checkbox-group">
+            <h2 style="font-size: 1.2rem;">I've heard this graduate program from<span class="mandatory"> *</span></h2> 
+            <div>
+                <input type="checkbox" id="media" name="GraduateProgram" value="Media">
+                <label for="media">Media</label>
+                <input type="checkbox" id="ad" name="GraduateProgram" value="Advertisements">
+                <label for="ad">Advertisements</label>
+                <input type="checkbox" id="agency" name="GraduateProgram" value="Agency">
+                <label for="agency">Agency</label>
+                <input type="checkbox" id="other" name="GraduateProgram" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </div>
+
+        <div class="radio-group">
+            <h2 style="font-size: 1.2rem; display: inline;">When I finish study I will<span class="mandatory"> *</span></h2>
+                <div>
+                    <input type="radio" id="country" name="plan" value="Return to my country">
+                    <label for="country">Return to my country</label>
+                    <input type="radio" id="job" name="plan" value="Find a job in Europe">
+                    <label for="job">Find a job in Europe</label>
+                    <input type="radio" id="trining" name="plan" value="Do the practical training and then decide">
+                    <label for="training">Do the practical training and then decide</label>
+                </div>
+        </div>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <div class="feedback-area">
+            <label for="feedback"><h2 style="font-size: 1.2rem;">Feedback for the course<span class="mandatory"> *</span></h2></label><br>
+            <textarea id="feedback" name="feedback" class="styled-textarea" rows="4" cols="50" maxlength="200" placeholder="Please provide your feedback for the course" required></textarea><br><br>
+        </div>  
+    </div>
+    </div>
+
+    <div class="container">
+        <p>I will write a paragraph for each methodology of <a href="https://aws.amazon.com/what-is/sdlc/#:~:text=The%20software%20development%20lifecycle%20(SDLC,expectations%20during%20production%20and%20beyond." target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">SDLC</a>. There are many of them but 
+            I will suggest a few. My suggestion and reasons are as follows:
+            <div class="list-group">
+                <ol type="A">
+                    <li><p><b>Agile</b> - Agile is considered one of the best SDLC methods. It works by breaking projects into smaller parts called sprints, and making incremental changes and adjustments to the project. It is useful in real world scenario where people and teams are networking and communicating with each other which leads to productivity. The customer is also always involved in the process for feedback and suggestions so they receive a satisfactory product. And the development would focus on producing prototype rather than documentation to the customer. Since work in done in sprints it is possible for faster delivery and also due to sprints risks are lesser. It can mainly be used for projects with evolving requirements and customer oriented products.</p>
+                        <li><b>V-Shaped SDLC Model</b> - This method is also known as Verification and Validation model.  As the name says, the model aims to finally meet at a single point (like V shape) that is code the project. But before we get to coding there are steps to be taken in parallel with each other. There occurs development on one side and testing on the other side. Requirement gathering is done in parallel with acceptance testing is done to ensure system meets required needs. System design done in parallel with system testing. The designing of architecture, modules and flow of data is done and then complimentary integration test is done to ensure they work with each other components. Low level design and functionalities of each model is done and unit test done on each component to ensure its working. Then, due to all the above steps the actual coding is to go smoothly
+                            <img class="imageLayout" src="V_shape_sdlc_drawio.png" alt="V_shape_sdlc_drawio">
+                        </li>
+                            <li><b>RAD - Rapid application model</b> - Once again as the name emphasizes this model aims to quickly develop an application using iterative stages, developing prototypes and receiving feedback from users. This model aims to use pre-developed tools to aid in its process. From capturing requirements, data and developing base models and applications of the required software it is done using help of tools. AI tools, code generation tools, productivity tools are some of the many tools used. It can be used when development is to be done fast with lesser human or financial resources. This model also is flexible and can cater to user’s needs.</li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <p>Among so many SDLC methodologies the ones that are in the AGILE classification are better. Among AGILE SDLC 
+            methods, I have also a few suggestions
+            <div class="list-group">
+                <ol type="A">
+                    <li><a href="#" class="list-group-item list-group-item-action active" style="color: rgb(0, 238, 255); text-decoration: underline;">Agile</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                        <li><a href="#" class="list-group-item list-group-item-action" style="color: rgb(0, 238, 255); text-decoration: underline;">Waterfall</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                            <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                                <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <p>In this software development and application course of <a href="https://www.srh-university.de/en/" target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">SRH</a>
+            we learn the following:
+            <div class="list-group">
+                <ol type="a">
+                    <li><a href="#" class="list-group-item list-group-item-action active" style="color: rgb(0, 238, 255); text-decoration: underline;">Agile</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                        <li><a href="#" class="list-group-item list-group-item-action" style="color: rgb(0, 238, 255); text-decoration: underline;">Waterfall</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                            <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                                <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <p>I have used <a href="https://www.w3schools.com/css/" target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">css</a> 
+            in this webpage and there are 3 waus to include css in a webpage as follows:
+            <div class="list-group">
+                <ol type="a">
+                    <li><a href="#" class="list-group-item list-group-item-action active" style="color: rgb(0, 238, 255); text-decoration: underline;">Agile</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                        <li><a href="#" class="list-group-item list-group-item-action" style="color: rgb(0, 238, 255); text-decoration: underline;">Waterfall</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                            <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                                <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <p>The reasons css used in a webpage are:
+            <div class="list-group">
+                <ol type="1">
+                    <li><a href="#" class="list-group-item list-group-item-action active" style="color: rgb(0, 238, 255); text-decoration: underline;">Agile</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                        <li><a href="#" class="list-group-item list-group-item-action" style="color: rgb(0, 238, 255); text-decoration: underline;">Waterfall</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                            <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                                <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <p>We also use <a href="https://www.w3schools.com/js/" target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">Javascript</a>
+            in webpage development. The main reasons are as follows:
+            <div class="list-group">
+                <ol type="a">
+                    <li><a href="#" class="list-group-item list-group-item-action active" style="color: rgb(0, 238, 255); text-decoration: underline;">Agile</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                        <li><a href="#" class="list-group-item list-group-item-action" style="color: rgb(0, 238, 255); text-decoration: underline;">Waterfall</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                            <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                                <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                                    <li><a href="#" class="list-group-item list-group-item-action disabled" style="color: rgb(0, 238, 255); text-decoration: underline;">V</a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; JKANWDNWEIDNQDNQDJ</li>
+                </ol>
+            </div>
+        </p>
+        <br>
+    </div>
+
+    <div class="container">
+        <p class="acknowledgment">
+            I have done this project myself and accept the consequences if found other ways.
+            <br>
+            You can reach me at<span class="mandatory"> *</span>: 
+            <div style="text-align: center; color: red  ;" id="errorMessage" class="error"></div>
+            <input style="text-align: center;" type="email" id="email" placeholder="Enter your EmailID">
+        </p>
+    </div>
+
+    <div class="submitButton"><button type="submit" onclick="submitOnClick()">Submit</button></div>
+    </div>
+
+    <div id="popupMessageSuccess" class="popups">
+        <div class="popup-content">
+            <span class="close" onclick="closepopupSuccess()">&times;</span>
+            <h3 style="color: black;"><span id="popup-heading-success"></span></h2>
+        </div>
+    </div>
+
+    <div id="popupMessageError" class="popups">
+        <div class="popup-content">
+            <span class="close" onclick="closepopupError()">&times;</span>
+            <h3 style="color: rgb(245, 12, 12);"><span id="popup-heading-error"></span></h2>
+        </div>
+    </div>
+
+    <div id="showData" class="container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
