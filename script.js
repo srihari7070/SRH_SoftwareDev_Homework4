@@ -68,7 +68,7 @@ function submitOnClick(){
     const email = document.getElementById('email').value;
     const errorMessage = document.getElementById('errorMessage');
     if (isValidEmail(email)) {
-        alert("3");
+        //alert("3");
         errorMessage.textContent = '';
         isFormValid = true;
     } else {
@@ -79,11 +79,11 @@ function submitOnClick(){
 
     if (isFormValid) {
         //alert("4");
-        document.getElementById('popup-heading-success').textContent = "Form submitted successfully";
+        document.getElementById('popup-heading-success').textContent = "Form submitted successfully !";
         document.getElementById('popupMessageSuccess').style.display = "block";  
         const showData = document.getElementById('showData');
         showData.innerHTML = `
-                <h3 style="color: Black;">View the submitted data:</h3>
+                <h3 style="color: Black;"><u>View the submitted data:</u></h3>
                 <p><strong>First name : ${Fname}</strong> </p>
                 <p><strong>Initial : ${initial}</strong> </p>
                 <p><strong>Last name : ${Lname}</strong> </p>
