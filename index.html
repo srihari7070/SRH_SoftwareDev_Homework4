@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="outer-container">
+    <div class="title">
+        <h1>Welcome to my homepage</h1>
+    </div>
+    <div class="container">
+        <div class="form-section">
+            <h2>Personal Info</h2>
+            <form id="feedbackform">
+                <div class="main_input_box">
+                    <div class="form-group">
+                        <div class="columns">
+                            <div class="column">
+                                <label for="FirstName">Name<span class="mandatory"> *</span></label>
+                                <input type="text" id="Fname" class="alphabet-only" placeholder="Enter your first name" required>
+
+                                <label for="initial">Middle initial</label>
+                                <input type="text" id="initial" class="alphabet-only" placeholder="Enter your middle initial" required>
+
+                                <label for="LastName">Last Name<span class="mandatory"> *</span></label>
+                                <input type="text" id="Lname" class="alphabet-only" placeholder="Enter your last name" required>
+
+                                <label for="country">I am from<span class="mandatory"> *</span></label>
+                                <select id="Cdropdown" class="select-dropdown" name="CountryDropdown">
+                                    <option value="" disabled selected>Select your country of origin</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Columbia">Columbia</option>
+                                    <option value="Singapore">Singapore</option>
+                                </select>
+                                
+                                <label for="email">Your email<span class="mandatory"> *</span></label>
+                                <div style="color: red  ;" id="errorMessage" class="error"></div>
+                                <input type="email" id="email" placeholder="Enter your EmailID">    
+                            </div>
+                            <div class="column">
+                                <label for="matriculation">Matriculation<span class="mandatory"> *</span></label>
+                                <input type="number" id="matriculation" placeholder="Enter your matriculation number">
+                        
+                                <label for="semester">Semester<span class="mandatory"> *</span></label>
+                                <input type="number" id="semester" placeholder="Enter your current semester">
+
+                                <label for="program">Program<span class="mandatory"> *</span></label>
+                                <select id="Pdropdown" class="select-dropdown" name="ProgramDropdown">
+                                    <option value="" disabled selected>Select your current program</option>
+                                    <option value="M.Sc. Big Data and AI">M.Sc. Big Data and AI</option>
+                                    <option value="M.Sc. Cyber Security">M.Sc. Cyber Security</option>
+                                    <option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
+                                    <option value="M.Sc. Robotics">M.Sc. Robotics</option>
+                                    <option value="M.Sc. Industry 4.0">M.Sc. Industry 4.0</option>
+                                    <option value="M.Sc. Arts and Film making">M.Sc. Arts and Film making</option>
+                                </select>
+
+                                <label for="startdate">Started in<span class="mandatory"> *</span></label>
+                                <input type="date" id="StartDate" placeholder="Select your program start date" onclick="restrictDate()">
+                            </div>
+                        </div> 
+                    </div>  
+                </div>
+            </form>
+
+        <div class="fancy-line-seperator"></div>
+
+        <div class="checkbox-group">
+            <h2 style="font-size: 1.2rem;">I've heard this graduate program from<span class="mandatory"> *</span></h2> 
+            <div>
+                <input type="checkbox" id="media" name="GraduateProgram" value="Media">
+                <label for="media">Media</label>
+                <input type="checkbox" id="ad" name="GraduateProgram" value="Advertisements">
+                <label for="ad">Advertisements</label>
+                <input type="checkbox" id="agency" name="GraduateProgram" value="Agency">
+                <label for="agency">Agency</label>
+                <input type="checkbox" id="other" name="GraduateProgram" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </div>
+
+        <div class="radio-group">
+            <h2 style="font-size: 1.2rem; display: inline;">When I finish study I will<span class="mandatory"> *</span></h2>
+                <div>
+                    <input type="radio" id="country" name="plan" value="Return to my country">
+                    <label for="country">Return to my country</label>
+                    <input type="radio" id="job" name="plan" value="Find a job in Europe">
+                    <label for="job">Find a job in Europe</label>
+                    <input type="radio" id="trining" name="plan" value="Do the practical training and then decide">
+                    <label for="training">Do the practical training and then decide</label>
+                </div>
+        </div>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <div class="feedback-area">
+            <label for="feedback"><h2 style="font-size: 1.2rem;">Feedback for the course<span class="mandatory"> *</span></h2></label><br>
+            <textarea id="feedback" name="feedback" class="styled-textarea" rows="4" cols="50" maxlength="200" placeholder="Please provide your feedback for the course" required></textarea><br><br>
+        </div>
+        
+        <div class="submitButton"><button type="submit" onclick="submitOnClick()">Submit</button></div>
+    </div>
+    </div>
+
+    <div class="container">
+        <p>I will write a paragraph for each methodology of <a href="https://aws.amazon.com/what-is/sdlc/#:~:text=The%20software%20development%20lifecycle%20(SDLC,expectations%20during%20production%20and%20beyond." target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">SDLC</a>. There are many of them but 
+            I will suggest a few. My suggestion and reasons are as follows:
+            <div class="list-group">
+                <ol type="A">
+                    <li><p><b>Agile- </b> <i>Agile is considered one of the best SDLC methods. It works by breaking projects into smaller parts called sprints, user stories and making incremental changes and adjustments to the project. It is useful in real world scenario where people and teams are networking and communicating with each other which leads to productivity. The customer is also always involved in the process for feedback and suggestions so they receive a satisfactory product. And the development would focus on producing prototype rather than documentation to the customer. Since work in done in sprints it is possible for faster delivery and also due to sprints risks are lesser. It can mainly be used for projects with evolving requirements and customer oriented products.</i></p></li>
+                        <li><b>V-Shaped SDLC Model - </b><i>This method is also known as Verification and Validation model.  As the name says, the model aims to finally meet at a single point (like V shape) that is code the project. But before we get to coding there are steps to be taken in parallel with each other. There occurs development on one side and testing on the other side. Requirement gathering is done in parallel with acceptance testing is done to ensure system meets required needs. System design done in parallel with system testing. The designing of architecture, modules and flow of data is done and then complimentary integration test is done to ensure they work with each other components. Low level design and functionalities of each model is done and unit test done on each component to ensure its working. Then, due to all the above steps the actual coding is to go smoothly</i>
+                            <img class="imageLayout" src="V_shape_sdlc_drawio.png" alt="V_shape_sdlc_drawio">
+                        </li>
+                            <li><b>RAD - Rapid application model - </b><i>Once again as the name emphasizes this model aims to quickly develop an application using iterative stages, developing prototypes and receiving feedback from users. This model aims to use pre-developed tools to aid in its process. From capturing requirements, data and developing base models and applications of the required software it is done using help of tools. AI tools, code generation tools, productivity tools are some of the many tools used. It can be used when development is to be done fast with lesser human or financial resources. This model also is flexible and can cater to user’s needs.</i></li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <p>Among so many SDLC methodologies the ones that are in the AGILE classification are better. Among AGILE SDLC 
+            methods, I have also a few suggestions
+            <div class="list-group">
+                <ol type="A">
+                    <li><b>Kanban - </b><i> is a Japanese word which roughly means ‘cards that can be seen.’ It uses a board called Kanban board where tasks are placed in ‘To Do’, ‘In Progress’ and ‘Done’ areas. This area is synchronized and everyone can view each card. No fixed iterations here, just pick up a task on the ‘To Do’ and get it done. It is good for continuous flow and improve efficiency. Used for project with continuous delivery, maintenance and support.</i></li>
+                        <li><b>Scrum - </b><i>This method organizes project into short same length iterations called sprints. Specific roles like Scrum master, product owner and developers work together to get project done. Each sprint have well defined goals and there are DSMs (Daily Standup Meetings) to update progress. Tasks are prioritized based on scrum master and product owner ideas and decision. This is good for iterative projects which can be broken down to parts and take feedback on.</i></li>
+                            <li><b>Lean - </b><i>Lean software development similar to manufacturing lean idea, it aims to remove wasted efforts, quick deliverables and optimization. It says ‘we need to deliver only what is needed, remove the rest.’ Customers and developers work together here also. It is ideal for startups and new projects with aim for efficiency and speed.</i> </li>
+                                <li><b>FDD - Feature Driven Development - </b><i>As the name says it aims on designing and building of features. The project revolves around features and is divided into different set of features and each are developed incrementally. That is why design is important here to see if each sprint of features are interconnecting with each other. It is useful for large complex projects.</i></li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <p>In this software development and application course of <a href="https://www.srh-university.de/en/" target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">SRH</a>
+            we learn the following:
+            <div class="list-group">
+                <ol type="a">
+                    <li><b>C programming - </b><i>Variables, data types, syntax, naming of variables and function, I/O operations, control flows (ifs, for, while, etc), data structures, dynamic data structures, functions, pointers, dynamic memory allocation, structures, file handling, preprocessor directives, memory management, libraries and creation of libraries and more.</i></li>
+                        <li><b>SDLC - </b><i>Software development life cycle. Methods ,ideas and rules to follow to efficiently and correctly go about developing a software program. Waterfall, AGILE, V-Shaped SDLC are some of them.</i></li>
+                            <li><b>Front end programming - </b><i>HTML, CSS, and JavaScript and how to use each other in relation to create the front end part of a webpage or program. Deployment and maintenance of said webpage also.</i></li>
+                                <li><b>Overall - </b><i>What happens in each corner and step of software development, how they are linked to each other and finally how to build a software.</i></li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <p>I have used <a href="https://www.w3schools.com/css/" target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">css</a> 
+            in this webpage and there are 3 waus to include CSS in a webpage as follows:
+            <div class="list-group">
+                <ol type="a">
+                    <li><b>Inline - </b><i>Using the ‘style’ attribute CSS are directly added to the HTML element. Example : &lt;h1 style="color: Red; font-size: 50px;"&gt;Welcome to my homepage&lt;/h1&gt;</i></li>
+                        <li><b>Embedded - </b><i> Or Internal CSS, these are used withing the &lt;style&gt;&lt;/style&gt; HTML Tags, inside the &lt;head&gt; section. Example : &lt;head&gt; &lt;style&gt; h1 { color: Red; } &lt;/style&gt;&lt;/head&gt;</i></li>
+                            <li><b>External - </b><i></i>CSS present in a separate file of it’s own (usually style.css) with .css extension. Added to HTML using link tag. Example : &lt;link rel="stylesheet" href="styles.css"&gt;</li>
+                                <li><b>Inline style attribute for dynamic changes - </b><i>Using ‘element.style’ to dynamically make changes. Example : element.style.backgroundColor = "red";</i></li>
+                                <li><b>Inside JavaScript - </b><i>Writing CSS in javascript as a constant or variable and then adding to element. Example : &lt;button style={dynamicStyles}&gt;Submit&lt;/button&gt;</i></li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <p>The reasons CSS used in a webpage are:
+            <div class="list-group">
+                <ol type="1">
+                    <li><b></b><i>Control visual aspects and look of the HTML elements.</i></li>
+                        <li><b></b><i>Styling and making the webpage look appealing and good design.</i></li>
+                            <li><b></b><i>Alignment, positioning and layout so that elements in a webpage can be correctly aligned and not mixed up and random. </i></li>
+                                <li><b></b><i>To maintain a consistent design and look across pages and websites by re-using CSS.</i></li>
+                                <li><b></b><i>Adaptability. Based on viewing device and screen size the webpage and layout must be consistent and look good.</i></li>
+                                <li><b></b><i>Using CSS files and re-using them is optimizing the webpage making it load faster.</i></li>
+                </ol>
+            </div>
+        </p>
+        <br>
+
+        <div class="fancy-line-seperator"></div><br>
+
+        <p>We also use <a href="https://www.w3schools.com/js/" target="_blank" class="active" style="color: rgb(0, 238, 255); text-decoration: underline;">Javascript</a>
+            in webpage development. The main reasons are as follows:
+            <div class="list-group">
+                <ol type="a">
+                    <li><i>Main reason to use JavaScript is due to its versatility and it being the biggest and most used programming language in web development.</i></li>
+                        <li><i>It provides real time updates to webpages and elements without needing to reload the entire page and all it’s contents just to refresh a display value part of the webpage.</i></li>
+                            <li><i>It provides many interactive elements and animations.</i></li>
+                                <li><i>If what you need is not available in the native libraries, then there are external libraries and third part integrations that people provide and update everyday, all across the world.</i></li>
+                                    <li><i>Validation of user inputs and data is done at client side itself with help of JavaScript, thus no wasted API calls and backend calculations.</i></li>
+                                    <li><i>Using AJAX and Fetch APIs, it does communication with servers and backend without reloading the webpage. </i></li>
+                                    <li><i>Several frameworks like Angular, React, Vue, are built on JavaScript and are very popular.</i></li>
+                                    <li><i>Easy event handling and DOM (Document Object Model) manipulation.</i></li>
+                </ol>
+            </div>
+        </p>
+        <br>
+    </div>
+
+    <div class="container">
+        <p class="acknowledgment">
+            I have done this project myself and accept the consequences if found other ways.
+            <br>
+            You can reach me at :  <a href="mailto:srihari.ananthan@stud.srh-university.de">srihari.ananthan@stud.srh-university.de</a>
+            
+        </p>
+    </div>
+    </div>
+
+    <div id="popupMessageSuccess" class="popups">
+        <div class="popup-content">
+            <span class="close" onclick="closepopupSuccess()">&times;</span>
+            <h3 style="color: rgb(1, 255, 22);"><span id="popup-heading-success"></span></h2>
+        </div>
+    </div>
+
+    <div id="popupMessageError" class="popups">
+        <div class="popup-content">
+            <span class="close" onclick="closepopupError()">&times;</span>
+            <h3 style="color: rgb(245, 12, 12);"><span id="popup-heading-error"></span></h2>
+        </div>
+    </div>
+
+    <div id="showData" class="container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

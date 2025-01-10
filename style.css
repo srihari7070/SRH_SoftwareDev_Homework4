@@ -1,0 +1,390 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Century', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.outer-container {
+    margin: 20px;
+    padding-bottom: 50px; 
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 20px 0;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 20px 0;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    margin-bottom: 0px;
+    padding: 25px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.submitButton {
+    max-width: 1000px;
+    margin: 50px auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 25px;
+    padding-bottom: 5px;
+}
+
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00c6ff;
+    border-left: 5px solid #0072ff;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #d3d3d3;
+}
+
+.form-group input, 
+.form-group select {
+    width:85%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    outline: none;
+    border: 1px solid #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+}
+
+.form-group input::placeholder {
+    color: #a5a5a5;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    box-shadow: 0 10px 20px rgba(0, 198, 255, 0.4);
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .form-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.acknowledgment {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;   
+    color: #ffffff;
+}
+
+.small-dropdown {
+    font-size: 1px; /* Adjust font size to make it visually smaller */
+    padding: 5px; /* Add a small padding for a compact appearance */
+    width: auto; /* Make the dropdown width adaptive to its content */
+    height: auto; /* Automatically adjust height to content */
+    border: 1px solid #ccc; /* Optional: Add a light border for aesthetics */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    background-color: #f9f9f9; /* Optional: Light background color */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+
+.small-dropdown:focus {
+    border-color: #007bff; /* Optional: Highlight border on focus */
+    outline: none; /* Remove the default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: Add a subtle shadow */
+}
+
+.mandatory {
+    color: red;
+    font-size: 12px;
+    vertical-align: text-top;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: red;
+}
+
+.feedback-area {
+    padding-right: 60px ;
+}
+
+.popups {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+/* Modal Content */
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.imageLayout {
+    display: block;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+ }
+
+/*----------------------------------------------------------*/
+
+
+
+/* Flexbox container to align content inside */
+.inner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px; /* Space between elements */
+    padding: 20px; /* Add padding to the content */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    color: white; /* Set text color to white */
+    font-family: 'Century', sans-serif; /* Use Roc Grotesk font */
+    font-size: 2em; /* Adjust the font size as needed */
+    text-align: center; /* Center the title */
+    margin: 20px 0; /* Add some spacing above and below */
+}
+
+.sub-title {
+    color: white; /* Set text color to white */
+    font-family: 'Century', sans-serif; /* Use Roc Grotesk font */
+    font-size: 2em; /* Adjust the font size as needed */
+    text-align: left; /* Center the title */
+    margin: 20px 0; /* Add some spacing above and below */
+}
+
+.main_input_box {
+    width: 90%;
+    /*margin: 20px auto;*/
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .column label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .column input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+
+input,
+select {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Focus state for inputs */
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Button styling */
+button {
+    width: 20%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float : right;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.align-right {
+    float: right;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.checkbox-group label {
+    margin: 0 5px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-group label {
+    margin: 0 5px;
+}
+
+.fancy-line-seperator {
+    width: 100%;
+    height: 5px;
+    background: radial-gradient(circle, #ffffff, #000000);
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.styled-textarea {
+    width: 100%;       /* Full width of the container */
+    height: 150px;     /* Custom height */
+    padding: 10px;     /* Add padding inside the textarea */
+    margin-top: 10px;
+    font-family: Arial, sans-serif; /* Font style */
+    font-size: 14px;   /* Text size */
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 5px; /* Rounded corners */
+    resize: vertical;  /* Allow vertical resizing only */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Add hover effect */
+.styled-textarea:hover {
+    border-color: #007BFF; /* Change border color on hover */
+}
+
+/* Add focus effect */
+.styled-textarea:focus {
+    outline: none; /* Remove default outline */
+    border-color: #007BFF; /* Highlight border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect */
+}
