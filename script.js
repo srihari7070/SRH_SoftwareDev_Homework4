@@ -1,21 +1,20 @@
-const alphabetFields = document.querySelectorAll('.alphabet-only');
+const onlyAlpha = document.querySelectorAll('.alphabet-only');
 
-// Function to allow only alphabet characters
-function allowOnlyAlphabets(event) {
-    event.target.value = event.target.value.replace(/[^a-zA-Z]/g, '');
+function allowAlphOnly(event) {
+    //alert("alpha here");
+    event.target.value = event.target.value.replace(/[^A-Za-z]/g, '');
 }
 
-// Attach the event listener to each input field
-alphabetFields.forEach((field) => {
-    field.addEventListener('input', allowOnlyAlphabets);
+onlyAlpha.forEach((field) => {
+    //alert("alpha here 2");
+    field.addEventListener('input', allowAlphOnly);
 });
 
 function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
 }
 
-// Function to validate email on button click
 function submitOnClick(){
     //alert("1");
     var isFormValid = false;
@@ -82,21 +81,24 @@ function submitOnClick(){
         document.getElementById('popup-heading-success').textContent = "Form submitted successfully !";
         document.getElementById('popupMessageSuccess').style.display = "block";  
         const showData = document.getElementById('showData');
-        showData.innerHTML = `
-                <h3 style="color: Black;"><u>View the submitted data:</u></h3>
-                <p><strong>First name : ${Fname}</strong> </p>
-                <p><strong>Initial : ${initial}</strong> </p>
-                <p><strong>Last name : ${Lname}</strong> </p>
-                <p><strong>Country : ${country}</strong> </p>
-                <p><strong>Matriculation number: ${matriculation}</strong> </p>
-                <p><strong>Semester : ${semester}</strong> </p>
-                <p><strong>Program : ${program}</strong> </p>
-                <p><strong>Date started in : ${StartDate}</strong> </p>
-                <p><strong>Email : ${email}</strong> </p>
-                <p><strong>You hear about the program from : ${checkbox_value}</strong> </p>
-                <p><strong>Your future plan : ${futureplan}</strong> </p>
-                <p><strong>Your feedback : ${feedback}</strong> </p>
-                
+        showData.innerHTML = 
+            `   <div class="container">
+                    <div class="heading_styles" id="acknowledgment">View the submitted data</div>
+                        <div class="main_input_box">
+                            <p><strong>First name : ${Fname}</strong> </p>
+                            <p><strong>Initial : ${initial}</strong> </p>
+                            <p><strong>Last name : ${Lname}</strong> </p>
+                            <p><strong>Country : ${country}</strong> </p>
+                            <p><strong>Matriculation number: ${matriculation}</strong> </p>
+                            <p><strong>Semester : ${semester}</strong> </p>
+                            <p><strong>Program : ${program}</strong> </p>
+                            <p><strong>Date started in : ${StartDate}</strong> </p>
+                            <p><strong>Email : ${email}</strong> </p>
+                            <p><strong>You hear about the program from : ${checkbox_value}</strong> </p>
+                            <p><strong>Your future plan : ${futureplan}</strong> </p>
+                            <p><strong>Your feedback : ${feedback}</strong> </p>  
+                        </div>
+                </div>
             `;
         focusOnDiv();
     } else {
@@ -107,14 +109,10 @@ function submitOnClick(){
 
 function restrictDate() 
 {
-    const datePicker = document.getElementById("StartDate");
-
-    // Get today's date in YYYY-MM-DD format
-    const today = new Date();
-    const formattedDate = today.toISOString().split("T")[0];
-
-    // Set the max attribute to today's date
-    datePicker.setAttribute("max", formattedDate);
+    const date = document.getElementById("StartDate");
+    const todayDate = new Date();
+    const todayDate_format = todayDate.toISOString().split("T")[0];
+    date.setAttribute("max", todayDate_format);
 }
 
 function closepopupSuccess() 
@@ -122,14 +120,13 @@ function closepopupSuccess()
     document.getElementById('popupMessageSuccess').style.display = "none";
 }
 
-// Close the modal if the user clicks anywhere outside of it
 window.onclick = function(event) 
 {
     if (event.target == document.getElementById('popupMessageSuccess')) {
-        closeModal();
+        closepopupSuccess();
     }
     if (event.target == document.getElementById('popupMessageError')) {
-        closeModal();
+        closepopupError();
     }
 }
 
@@ -139,12 +136,20 @@ function closepopupError() {
 
 function focusOnDiv() {
     const targetDiv = document.getElementById('showData');
-    targetDiv.scrollIntoView({
-        behavior: 'smooth',  // Scroll smoothly
-        block: 'start'       // Align to the top of the viewport
-    });
+    targetDiv.scrollIntoView({ behavior: 'smooth',block: 'start'  });
 }
 
-$(document).ready(function() {
-    
-});
+function goToPersonalForm(){
+    const targetDiv = document.getElementById('personalInfo');
+    targetDiv.scrollIntoView({ behavior: 'smooth',block: 'start'  });
+}
+
+function goToTextInfo(){
+    const targetDiv = document.getElementById('theoryQuestions');
+    targetDiv.scrollIntoView({ behavior: 'smooth',block: 'start'  });
+}
+
+function goAcknowledgement(){
+    const targetDiv = document.getElementById('acknowledgment');
+    targetDiv.scrollIntoView({ behavior: 'smooth',block: 'start'  });
+}
