@@ -153,3 +153,8 @@ function goAcknowledgement(){
     const targetDiv = document.getElementById('acknowledgment');
     targetDiv.scrollIntoView({ behavior: 'smooth',block: 'start'  });
 }
+
+window.onload = function () {
+    const feedbackValue = document.getElementById('feedback');
+    feedbackValue.value = "This course was an overall journey into the world of software development. It teachs and guides one through the how's, why's and what's of software development. From computer theory to C language, to algorithms and data structures and to web development it covers all those bases. One understands all the boxes that needs to be checked in order to develop an application or webpage. I would have loved if the course had gone more in depth for coding, Data structures and algorithms and into competetive programming.";
+};
